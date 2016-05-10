@@ -216,12 +216,12 @@ void parseCommand (String cmd) {
 }
 
 char ssid[] = "TP-LINK_1AFD";     //  your network SSID (name)
-char pass[] = "Platense1985";  // your network password
+char pass[] = "xxxxxxxxxxxx";  // your network password
 //char serverURI[] = "m12.cloudmqtt.com";
 //int port = 16186;
 //char clientName[] = "SmartPlug";
 //char username[] = "iajmzgae";
-//char password[] = "bNl5xzae8mox";
+//char password[] = "xxxxxxxxxxxx";
 
 const long connectionCheckInterval = 30000;
 int status = WL_IDLE_STATUS;     // Wifi radio's status
@@ -324,7 +324,7 @@ void setup() {
 
   Serial.println(F(""));
   Serial.println("Connecting to MQTT Broker ..");
-  if (client.connect("SmartPlug", "iajmzgae", "bNl5xzae8mox")) {
+  if (client.connect("SmartPlug", "iajmzgae", "xxxxxxxxxxxx")) {
     Serial.println(F("Connected :-)"));
   } else {
     Serial.println(F("Connection failed :-("));
@@ -389,7 +389,7 @@ void checkConnection()  {
       } else {
         Serial.println(F(""));
         Serial.println(F("Lost MQTT connection! Reconnecting.."));
-        if (client.connect("ArduinoClient", "iajmzgae", "bNl5xzae8mox")) {
+        if (client.connect("ArduinoClient", "iajmzgae", "xxxxxxxxxxxx")) {
           Serial.println(F("You're re-connected to MQTT Broker"));
           if (client.connected()) {
             client.publish("/outTopic", "hello world");
